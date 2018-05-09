@@ -1,0 +1,57 @@
+<div id="resourceLeft" style="position: absolute;left:0%;width:25%;height:100%;border: 0.5vh black solid;padding: 1vh;border-right: 0;background-color:white;">
+
+    <!--        <form id="resourcesForm" style="position: absolute;left: 30%;top:0.9vh;">
+                    <input type="search" placeholder="Search" id="resourcesSearch">
+            </form>-->
+
+    <ul id='resourcesTab' class="nav nav-pills" >
+        <li class="active"><a data-toggle="tab" href="#resourcesPageResources" id="infoTab1" style="font-size:1.5vh;font-weight:bold">Resources</a></li>
+        <li ><a data-toggle="tab" href="#resourcesPageLibraries" style="font-size:1.5vh;font-weight:bold">Libraries</a></li>
+        <li>
+            <form id="resourcesForm" style="">
+                <input type="search" placeholder="Search" id="resourcesSearch">
+            </form>
+
+        </li>
+
+    </ul>
+    <div class="tab-content" style="height:95%;margin: 1vh;overflow:auto;">
+        <div id="resourcesPageResources" class="tab-pane fade  in active  nav-tabs">
+
+            <div id="myjstreeResource"></div>
+
+        </div>
+        <div id="resourcesPageLibraries" class="tab-pane fadenav-tabs">
+
+            <!--<div id="myjstreeLibraries"></div>-->
+            <div id="myjstreeFunctions"></div>
+        </div>
+    </div>
+
+</div>
+
+<div id="resourceRight" style="position: absolute;left:25%;width:75%;height:100%;border: 0.5vh #000000 solid;background-color:white;">
+    <div id="testshow" style="position: relative;height:100%;padding: 1vh;">
+        <div id="resourceView" style="height:100%;"></div>
+    </div>
+</div>
+
+<div class="modal fade" id="downloadFile" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Download File</h4>
+            </div>
+            <div class="modal-body">
+                File Too large to display, want to download it? 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" onclick="downloadResourceFile()">Download</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

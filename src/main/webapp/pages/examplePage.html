@@ -1,0 +1,212 @@
+<div class="container" style="background-color: white;padding: 10px;width: 80%;height:90vh;">
+    <div class="w3-row">
+        <a href="javascript:void(0)" onclick="openCity(event, 'London');">
+            <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-red">Bioinformatics Examples</div>
+        </a>
+        <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
+            <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Geo-Science Examples</div>
+        </a>
+        <a href="javascript:void(0)" onclick="openCity(event, 'Tokyo');">
+            <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Feature Examples</div>
+        </a>
+    </div>
+    <div id="London" class="w3-container city" style="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/examplePathway.jpg" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>Pathway Difference in Orthology Genes</h3>
+                            <p>This workflow looks at a set of human genes and search for the orthologs of mouse and rat and return the difference in them</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <button type="button" class="btn btn-info" onclick="LoadExample('FiftySix', true, 'Pathway Difference in Orthology Genes')">Load Pathway Example</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/EntrezToKEGGImageExample.jpg" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>Entrez to KEGG Image</h3>
+                            <p>This is a example shows how to tranlate entrez ids to kegg images with its descriptions</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <button type="button" class="btn btn-info" onclick="LoadExample('SixtyNine', true, 'Entrez to KEGG Image')">Load Entrez To KEGG Image Example</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/keggexample.jpg" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>Human Genes to Pathway Images</h3>
+                            <p>This is a example converts gene id to ncbi-gene id and cross reference KEGG database to get pathway id back</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <!--<button type="button" class="btn btn-info" onclick="LoadExample('Four', true, 'Human Genes to Pathway Images')">Load KEGG Example</button>-->
+                            <!--<button type="button" class="btn btn-info" onclick="LoadExample('ThirtyOne', true, 'Human Genes to Pathway Images')">Load KEGG Example</button>-->
+                            <button type="button" class="btn btn-info" onclick="LoadExample('SeventyOne', true, 'Human Genes to Pathway Images')">Load KEGG Example</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class='row'>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/genomeanalyticsexample.jpg" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>Genome Analytics</h3>
+                            <p>This is a example shows how to call local libraries BWA and Genome Analytics tools to align genomes.</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <button type="button" class="btn btn-info" onclick="LoadExample('Three', true, 'Genome Analytics')">Load Genome Analytics Example</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Paris" class="w3-container city" style="display:none">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/cubeD3.jpg" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>Minerals Evolution 3D Exploration</h3>
+                            <p>This workflow collects the elements occurrences in Minerals Evolution</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <button type="button" class="btn btn-info" onclick="LoadExample('Seventy', true, 'Minerals Evolution 3D Exploration')">Load Mineral Example</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/ogcexample.jpg" style="height:100px;width:150px;"><br>
+                        <div class="caption">
+                            <h3>Great Britain Fossil Collections</h3>
+                            <p>This is a example shows how to access OGC and write SPARQL collect Geological layers information in Great Britain.</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <button type="button" class="btn btn-info" onclick="LoadExample('ThirtyThree', true, 'Great Britain Fossil Collections')">Load OGC Example</button>
+                            <!--<button type="button" class="btn btn-info" onclick="LoadExample('One', true, 'Great Britain Fossil Collections')">Load OGC Example</button>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/fossilExample.png" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>Fossil Collections and comparison</h3>
+                            <p>This is a example shows how to get Fossil records</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <!--<button type="button" class="btn btn-info" onclick="LoadExample('ThirtyTwo', true, 'Fossil Collections and comparison')">Load Fossil Example</button>-->
+                            <button type="button" class="btn btn-info" onclick="LoadExample('Thirty', true, 'Fossil Collections and comparison')">Load Fossil Example</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Tokyo" class="w3-container city" style="display:none">
+        <div class="container">
+            <div class='row'>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/UniversalMapping.jpg" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>Universal Mapping</h3>
+                            <p>This is a example shows how to use universal mapping in VisFlow</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <button type="button" class="btn btn-info" onclick="LoadExample('FiftySeven', true, 'Universal Mapping')">Load Universal Mapping Example</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/repeatExample.jpg" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>Repeat Random Times</h3>
+                            <p>This is a example shows how to use Repeat icon in VisFlow. The workflow will continue runing until the maximum number in num attribute is greater than or equal to 40</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <button type="button" class="btn btn-info" onclick="LoadExample('SixtyTwo', true, 'Repeat Random Times')">Load Repeat Example</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/webservicecall.jpg" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>A List of Web service calls</h3>
+                            <p>This is a example shows how to use web service calls in VisFlow</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <button type="button" class="btn btn-info" onclick="LoadExample('FiftyEight', true, 'A List of Web service calls')">Load Web Service Call Example</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/combineexmaple.jpg" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>Fusion Tables</h3>
+                            <p>This is a example shows how to use Fusion icon</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <button type="button" class="btn btn-info" onclick="LoadExample('SixtySix', true, 'Fusion Tables')">Load Fusion Example</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/fusionexample.jpg" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>Combine tables</h3>
+                            <p>This is a example shows how to use fusion icon</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <button type="button" class="btn btn-info" onclick="LoadExample('FiftyTwo', true, 'Combine tables')">Load Combine Example</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="example/pic/xqueryBuilderExample.jpg" style="height:100px;width:200px;"><br>
+                        <div class="caption">
+                            <h3>Visual Query Builder for Selecting Attributes</h3>
+                            <p>This is a example shows how to select gene id equal 217 from gene.xml file using our Visual Query Builder</p>
+                            <h3>Author</h3>
+                            <p>U of Idaho Database Team</p>
+                            <button type="button" class="btn btn-info" onclick="LoadExample('SixtyFour', true, 'Visual Query Builder for Selecting Attributes')">Load Visual Query Builder Example</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function openCity(evt, cityName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-border-red";
+    }
+</script>

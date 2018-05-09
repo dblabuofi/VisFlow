@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Help and About Page</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous" >
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!-- Matomo -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="label label-info"><i class="fas fa-comment"></i> Visits over the Last 30 Days</label>
+                    <image style="height:300px;width:410px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://dblab2.innocraft.cloud/index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=VisitsSummary&apiAction=get&token_auth=anonymous&graphType=evolution&period=day&date=previous30&width=500&height=250" />
+                </div>
+                <div class="col-md-6">
+                    <label class="label label-info"><i class="fas fa-comment"></i> Browsers for the Current Month</label>
+                    <image style="height:300px;width:410px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://dblab2.innocraft.cloud/index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=DevicesDetection&apiAction=getBrowsers&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=400&height=250" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="label label-info"><i class="fas fa-comment"></i> Countries for the Current Week</label>
+                    <image style="height:300px;width:410px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://dblab2.innocraft.cloud/index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=UserCountry&apiAction=getCountry&token_auth=anonymous&graphType=horizontalBar&period=month&date=today&width=400&height=250" />
+                </div>
+                <div class="col-md-6">
+                    <label class="label label-info"><i class="fas fa-comment"></i> Operation Systems for Current Month </label>
+                    <image style="height:300px;width:410px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="https://dblab2.innocraft.cloud/index.php?module=API&method=ImageGraph.get&idSite=1&apiModule=DevicesDetection&apiAction=getOsVersions&token_auth=anonymous&graphType=pie&period=month&date=today&width=400&height=250&column=nb_visits&colors=FFFF00,00FF00,FF0000,0000FF,555555,C3590D" />
+                </div>
+            </div>
+
+
+        </div>
+        <div class="container" style="margin-top: 5px;">
+            <div class='row'>
+                <div class='col-md-1'>
+                    <label class="label label-info">
+                        <i class="fas fa-file"></i>
+                        paper:
+                    </label>
+                </div>
+                <div class='col-md-10'>
+                    <a href='http://ieeexplore.ieee.org/document/7930101/'>
+                        Visflow: A visual database integration and workflow querying system
+                    </a>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-1'>
+                    <label class="label label-info">
+                        <i class="fas fa-file"></i>
+                        paper:
+                    </label>
+                </div>
+                <div class='col-md-10'>
+                    <a href='http://ieeexplore.ieee.org/document/7822615/'>
+                        Visual orchestration and autonomous execution of distributed and heterogeneous computational biology pipelines
+                    </a>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-1'>
+                    <label class="label label-info">
+                        <i class="fas fa-file"></i>
+                        paper:
+                    </label>
+                </div>
+                <div class='col-md-10'>
+                    <a href='https://www.inderscienceonline.com/doi/abs/10.1504/IJDMB.2017.084262'>
+                        Implementing computational biology pipelines using visflow
+                    </a>
+                </div>
+            </div>
+            <br>
+            <div class='row'>
+                <div class='col-md-2'>
+                    <label class="label label-info">
+                        <i class="fas fa-braille"></i>
+                        VisFlow Manual
+                    </label>
+                </div>
+                <div class='col-md-8'>
+                    <a  class="nav-link" style="" href="manual/Manual.pdf" target="_blank">Manual</a>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 10px; background-color: white;">
+            <div class="row">
+                This application is designed by Database Lab in University of Idaho.
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label class="label label-info">
+                        <i class="fas fa-user"></i>
+                        Student:
+                    </label>
+                    Xin Mou <br> 
+                    <label class="label label-info">
+                        <i class="fas fa-envelope"></i>
+                        Email:
+                    </label>
+                    mou1609@vandals.uidaho.edu
+                </div>
+                <div class="col-sm-3">
+                    <label class="label label-info">
+                        <i class="fas fa-user"></i>
+                        Professor:
+                    </label> Hasan Jamil <br> 
+                    <label class="label label-info">
+                        <i class="fas fa-envelope"></i>
+                        Email:
+                    </label>
+                    jamil@uidaho.edu
+                </div>
+            </div>
+            <div class="row">
+                <p>If you have any question, please contact 
+                    <a href="mailto:mou1609@vandals.uidaho.edu">Xin Mou</a>.</p>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,415 @@
+<div class="container" style="height:98%;">
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="control-label col-sm-2" >Register Type:</label>
+            <div class="col-sm-10">
+                <select id="registerType" class="form-control" onchange="registerTypeChange()" name='registerType'>
+                    <option selected  value="R">Resource</option>
+                    <!--<option  value="L">Libraries</option>-->
+                    <option  value="F">Library</option><!-- meaning changed -->
+                    <!--<option value="E">Examples</option>-->
+                </select>        
+            </div>
+        </div>
+    </form>
+
+    <div id="resourcesblock">
+        <form class="form-horizontal" role="form"  id='uploadForm'> 
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Resource Type:</label>
+                <div class="col-sm-10">
+                    <select id="resourcetype" class="form-control" name="resourceType" onchange="registerResourceTypeChange()">
+                        <option selected  value="CSV">CSV</option>
+                        <option value="XML">XML</option>
+                        <option value="SQLTable">Relational Table</option>
+                        <option value="HTTP">HTTP</option>
+                        <option value="REST">REST</option>
+                        <option value="Other">Other</option>
+                    </select>        
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Organization:</label>
+                <div class="col-sm-10"> 
+                    <input autocomplete="off"  class="form-control" name="organization">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Resource Name:</label>
+                <div class="col-sm-10"> 
+                    <input id="resourceName" autocomplete="off"  class="form-control" name="resourceName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Description:</label>
+                <div class="col-sm-10"> 
+                    <input id="description" autocomplete="off" class="form-control" name="description">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Aggregate Name:</label>
+                <div class="col-sm-10"> 
+                    <input list='aggnames' id="aggregateName" autocomplete="off" class="form-control" name="aggregateName">
+                    <datalist id='aggnames'>
+                    </datalist>
+                </div>
+            </div>
+            <div class="form-group">
+                <!--<label class="control-label col-sm-2">Schema:<span style="font-size:10px;">(Name:Type[,attr,attr,...]) </span></label>-->
+                <label class="control-label col-sm-2">Schema:</label>
+                <div class="col-sm-10"> 
+                    <div id='schemaTree' style='width: 100px;'></div>
+                </div>
+            </div>
+            <div id = "registerResourceRemote">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" >Method:</label>
+                    <div class="col-sm-10"> 
+                        <select id="updateResMethodReturnType" class="form-control" name="method" >
+                            <option value="GET" >GET</option>
+                            <option value="POST" >POST</option>
+                        </select>  
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" >URL:</label>
+                    <div class="col-sm-10"> 
+                        <input class="form-control" autocomplete="off" name="URL">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" >URL Example:</label>
+                    <div class="col-sm-10"> 
+                        <input class="form-control" autocomplete="off" name="URLExample">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" >Suggested OutputFile Name:</label>
+                    <div class="col-sm-10"> 
+                        <input class="form-control" autocomplete="off" name="suggestOutputFileName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" >Method return File Type:</label>
+                    <div class="col-sm-10"> 
+                        <select id="updateResMethodReturnType" class="form-control" name="methodReturnType" >
+                            <option value="CSV" >CSV</option>
+                            <option selected  value="XML" >XML</option>
+                            <option   value="JSON" >JSON</option>
+                            <option value="HTML" >HTML</option>
+                            <!--                            <option   value="TEXT" >TEXT</option>-->
+                        </select>        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" >Return File Type:</label>
+                    <div class="col-sm-10"> 
+                        <select id="updateResReturnFileType" class="form-control" name="returnFileType" >
+                            <option value="CSV" >CSV</option>
+                            <option value="XML" >XML</option>
+                        </select>        
+                    </div>
+                </div>
+                <!--                                  <div class="form-group">
+                                                         <label class="control-label col-sm-2" >Method return File Type:</label>
+                                                         <div class="col-sm-10"> 
+                                                                 <select id="updateResMethodReturnType" class="form-control" name="methodReturnType" >
+                                                                 <option value="CSV" class="CSV">CSV</option>
+                                                                 <option selected  value="XML" class="XML">XML</option>
+                                                                 <option   value="JSON" class="JSON">JSON</option>
+                                                                 <option   value="TEXT" class="TEXT">TEXT</option>
+                                                                 <option value="HTML" class="HTML">HTML</option>
+                                                         </select>        
+                                                         </div>
+                                                 </div>
+                                                  <div class="form-group">
+                                                         <label class="control-label col-sm-2" >Return File Type:</label>
+                                                         <div class="col-sm-10"> 
+                                                            <select id="updateResReturnFileType" class="form-control" name="returnFileType" >
+                                                                 <option value="CSV" class="CSV TEXT">CSV</option>
+                                                                 <option value="XML" class="JSON XML HTML">XML</option>
+                                                            </select>        
+                                                         </div>
+                                                 </div>-->
+                <div style='display: none;'>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >Wrapper:</label>
+                        <div class="col-sm-10"> 
+                            <select id="updateResReturnFilewrapper" class="form-control" name="wrapper" onchange="registerResourceWrapperChange()">
+                                <option value="textTableWrapper">Text To Table Wrapper</option>
+                                <option value="jsonToxmlWrapper">JSON to XML Wrapper</option>
+                                <option value="myTableExactor">Table Exactor</option>
+                            </select>        
+                        </div>
+                    </div>
+                    <div class="form-group" id="textTableWrapper">
+                        <label class="control-label col-sm-2" >separator:</label>
+                        <div class="col-sm-10"> 
+                            <input  class="form-control" autocomplete="off" name="separator">
+                        </div>
+                        <label class="control-label col-sm-2" >headers:</label>
+                        <div class="col-sm-10"> 
+                            <input  class="form-control" autocomplete="off" placeholder="seperated by comma" name="textTableWrapperHeaders">
+                        </div>
+                        <label class="control-label col-sm-2" >Result Contains Header Info:</label>
+                        <div class="col-sm-10"> 
+                            <input type="checkbox" name="resultContainsHeaderInfo" />
+                        </div>
+                    </div>
+                    <div class="form-group" id="jsonToxmlWrapper">
+                        <label class="control-label col-sm-2" >Attributes:</label>
+                        <div class="col-sm-10"> 
+                            <input  class="form-control" autocomplete="off" placeholder="seperated by comma" name="jsonToxmlWrapperAttributes">
+                        </div>
+                    </div>
+                    <div class="form-group" id="myTableExactor">
+                        <label class="control-label col-sm-2" >headers:</label>
+                        <div class="col-sm-10"> 
+                            <input  class="form-control" autocomplete="off" placeholder="seperated by comma" name="myTableExactorHeaders">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" >Attributes:</label>
+                    <div class="col-sm-10"> 
+                        <table id="registerUpdateAttributesTable" class='table table-bordered table-hover table-sm' width='100%' style='margin-top:0.5vh;'>
+                            <thead>
+                            <th>Attribute Name</th>
+                            <th>Attribute Value</th>
+                            <th width='12%'>Required</th>
+                            <th width='12%'>Shown</th>
+                            <th width='15%'>Attribute Type</th>
+                            <th>Example</th>
+                            <th>Description</th>
+                            <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                            <tfoot>
+                            <td colspan='80'>
+                                <button type="button" class='btn btn-info' onclick='registerAddRow("registerUpdateAttributesTable")'><span class='glyphicon glyphicon-plus'></span>&nbsp;Add New Attribute</button>
+                            </td>
+                            </tfoot>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id ="registerResourceLocal">
+                <div class="form-group">
+                    <div class="col-sm-2" >
+                        <label class="btn btn-primary pull-right">
+                            Choose File: <input id="inputUpload" type="file" style="display: none;" name="file">
+                        </label>
+                    </div>
+                    <div class="col-sm-10"> 
+                        <input id="inputUploadSelected" type="text" class="form-control" readonly="" name="fakeFile">
+                    </div>
+                </div>
+            </div>
+
+            <div id ="registerResourceSQLTable" class="form-group">
+                <label class="control-label col-sm-2">
+                    SQL Table:
+                </label>
+                <div class="col-sm-10"> 
+                    <textarea id="sqltablescript" class="form-control"  name="sqltablescript" style="resize: vertical;"></textarea>
+                </div>
+            </div>
+            <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <!--<input type="button" class="btn btn-info" onclick="RegisterUpdateResource()" value="Add">-->
+                    <input type="submit" class="btn btn-info" value="Add">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="librariesblock">
+        <form class="form-horizontal" role="form" id="updateFormLibrary">
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Library Name:</label>
+                <div class="col-sm-10">
+                    <input id="libraryName" autocomplete="off"   class="form-control" placeholder="" name="libraryName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Library Type:</label>
+                <div class="col-sm-10"> 
+                    <input  class="form-control" autocomplete="off"   name="libraryType">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Organization:</label>
+                <div class="col-sm-10"> 
+                    <input  class="form-control" autocomplete="off"   name="organization">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Description:</label>
+                <div class="col-sm-10"> 
+                    <textarea  class="wholewidth" style="reisze:none;height:200px;" name="description"></textarea>
+                </div>
+            </div>
+            <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" class="btn btn-info" value="Add" >
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="functionsblock">
+        <form class="form-horizontal" role="form" id="uploadFormFunction">
+            <!--                         <div class="form-group">
+                                             <label class="control-label col-sm-2" >Library Name:</label>
+                                             <div class="col-sm-10">
+                                                     <input class="form-control" placeholder="" name="libraryName">
+                                             </div>
+                                     </div>-->
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Library Name:</label>
+                <div class="col-sm-10"> 
+                    <input  class="form-control" autocomplete="off"   name="functionName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Library Type:</label>
+                <div class="col-sm-10"> 
+                    <select class="form-control" name="functionType">
+                        <option  selected value="executable">Windows Executable</option>
+                        <option value="jar">Jar</option>
+                        <option value="bash">Bash</option>
+                        <option value="python">Python script</option>
+                        <option value="rscript">R script</option>
+                    </select>        
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Organization:</label>
+                <div class="col-sm-10"> 
+                    <input autocomplete="off"  class="form-control" name="organization">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Aggregate Name:</label>
+                <div class="col-sm-10"> 
+                    <input list='aggfunnames' id="aggregateName" autocomplete="off" class="form-control" name="aggregateName">
+                    <datalist id='aggfunnames'>
+                    </datalist>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2" >
+                    <label class="btn btn-primary pull-right">
+                        Function File: <input id="inputUploadFunction" type="file" style="display: none;" name="functionFile">
+                    </label>
+                </div>
+                <div class="col-sm-10"> 
+                    <input type="text" id="inputUploadFunctionSelected"  class="form-control" readonly="" name="fakeFunctionFile">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Description:</label>
+                <div class="col-sm-10"> 
+                    <textarea  class="form-control" style="reisze:none;height:200px;" name="description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Attributes:</label>
+                <div class="col-sm-10"> 
+                    <table id="registerUpdateFunctionAttributeTable" class='table table-bordered table-hover table-sm' width='100%' style='margin-top:0.5vh;'>
+                        <thead>
+                        <th>Attribute Name</th>
+                        <th>Attribute Value</th>
+                        <th width='12%'>Required</th>
+                        <th width='12%'>Shown</th>
+                        <th width='15%'>Attribute Type</th>
+                        <th>Example</th>
+                        <th>Description</th>
+                        <th>Delete</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                        <td colspan='8'>
+                            <button type="button" class='btn btn-info' onclick='registerAddRow("registerUpdateFunctionAttributeTable")'><span class='glyphicon glyphicon-plus'></span>&nbsp;Add New Attribute</button>
+                        </td>
+                        </tfoot>
+
+                    </table>
+                </div>
+            </div>
+            <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" class="btn btn-info" value="Add">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="examplesblock">
+        <form class="form-horizontal" role="form" id="updateFormExample">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Exmaple (JSON): </label>
+                <div class="col-sm-10"> 
+                    <textarea  class="wholewidth" style="reisze:none;height:200px;" name="example"></textarea>
+                </div>
+            </div>
+            <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-info">Add</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <progress style="position: absolute; top: 35%; left:45%"></progress>
+    <!--         <div class="progress">
+                     <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                     </div>
+             </div>-->
+
+    <!--         <div class="modal fade" id="openblockFile" role="dialog">
+                            <div class="modal-dialog">
+                                    <div class="modal-content">
+                                            <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Open File</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                    <input type="file" id="uploadFile" name="file" />
+                                                    <form id='uploadForm' enctype="multipart/form-data">
+                                                            <input id="uploadFile" name="file" type="file" />
+                                                            <input id="uploadbutton" type="button" value="Upload" />
+                                                    </form>
+                                                    <progress></progress>
+    
+                                                    <form id='uploadFileForm' action="" method="post" enctype="multipart/form-data">
+                                                            <p>
+                                                                    Select a file : <input type="file" name="file" size="50" />
+                                                            </p>
+                                                            <input type="submit" value="Upload It" />
+                                                    </form>
+    
+    
+    
+    
+                                            </div>
+                                            <div class="modal-footer">
+                                                    <button type="button" class="btn btn-info" onclick="loadFromFile()">Open</button>
+                                                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                                            </div>
+                                    </div>
+                            </div>
+                    </div>-->
+
+
+
+
+
+
+</div>
+
+
+
+
+

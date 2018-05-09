@@ -1,0 +1,56 @@
+<!--<button type="button" class="btn btn-warning" onclick="doanloadImageText()">button</button>-->
+
+
+<!--<div class="hideit" style="position:absolute;z-index: 10;width: 50vh;left:50vh;margin: 0 none;padding: 0 none;" id="imageshow">
+        <a href="#" class="close pull-left" data-dismiss="alert" aria-label="close" style="z-index: 12;color:red;position: absolute;top:0%;" onclick="closeimage()">&times;</a>
+        <label id="imagelabel" style="z-index: 12;position: absolute;top:0%;left:3%;"></label>
+        <image id="pathimage" style="width: 500%;height:500%;"/>
+</div>-->
+<!--<div class="position:relative; margin-left:2vh;">-->
+<button type="button" class="btn btn-purple" onclick="continueVisFlow()"><span  data-toggle="tooltip" data-placement="top" title="Continue" class="glyphicon glyphicon-arrow-right"></span></button>
+<button type="button" class="btn btn-purple" onclick="pauseVisFlow()"><span  data-toggle="tooltip" data-placement="top" title="pause" class="glyphicon glyphicon-pause"></span></button>
+<button type="button" class="btn btn-purple" onclick="stopVisFlow()"><span  data-toggle="tooltip" data-placement="top" title="quit" class="glyphicon glyphicon-stop"></span></button>
+<div style="float:right;width:1%;border:1px #EFF0F1 solid;"></div>
+<span id="loadedworkflowname" style="font-family: 'Oswald', sans-serif;float:right;"></span>
+<!--<button type="button" class="btn" onclick="doanloadImageText()">doanloadImageText</button>-->
+<!--</div>-->
+
+<div id="horizontalpannel" style="position: absolute;left:0%;width:99%;height:85%;border: 0.5vh #000000 solid;">
+    <div id="mynetworkresult"  style="position:absolute;width:50%;height:50%;"></div>
+    <div id="bottomOutput" style="position: absolute;top:50%;width:50.1%;height:50%;border-top:0.5vh black solid;">
+        <!--<div id="bottomOutput" style="position: absolute;top:50%;width:50.1%;height:50%;border:0.5vh red solid;">-->
+        <div style="position: relative;overflow:auto;height:100%;padding: 0.1vh;">
+            <div>
+                <ul id='outputTypePannel' class="nav nav-pills" >
+                    <li class="active" id="outputConent1" ><a data-toggle="tab" href="#outputConent" style="font-size:1.5vh;font-weight:bold">
+                            <!--<label class="label label-primary">Output:</label>-->
+                            <label>Output:</label>
+                        </a></li>
+                    <li id="outputConent2" style="display: none;"><a data-toggle="tab" href="#outputFile" style="font-size:1.5vh;font-weight:bold">files</a></li>
+                </ul>
+            </div>
+            <div class="tab-content" style="height:85%;margin: 0.1vh;">
+                <div id="outputConent" class="tab-pane fade in active nav-tabs">
+                    <div id="outputshow" ></div>
+                </div>
+                <div id="outputFile" class="tab-pane fade in nav-tabs">
+                    <div id="outputFileShow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="verticalpannel2" style="position:absolute;left:50%;width:50%;height:100%;border-left:0.5vh black solid;padding: 0.1vh;">
+        <div id="processmessageWrapper" style="position: relative;overflow:auto;height:100%;padding: 0.1vh;">
+            <label id="verticalbuton2info" class="label label-primary">Running Information:</label><br>
+            <xmp id="processmessage" ></xmp>
+            <image id="pathimage" class="hideit" style="position: relative;width: 99.9%;height:100%;"/>
+            <img class="hideit" src='image/loading.gif' style='position:absolute;left:45%;top:45%;'/>
+            <div class='hideit' style="height: 400px;" id="curMap"></div>
+            <svg class="hideit" style="height: 400px;width:900px;" id="oldMap"></svg>
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiaiUE-66qiu4WB5bNlvImyQKLelCzoGc&callback=initCurMap">
+            </script>
+            <iframe class="hideit" id="myD3Visual" src="./cubeView.html" style="width:100%;height: 95%"></iframe>
+        </div>
+    </div>
+</div>

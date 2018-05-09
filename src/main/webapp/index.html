@@ -1,0 +1,687 @@
+<!doctype html>
+<html>
+    <head>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116158228-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-116158228-1');
+        </script>
+
+        <script type="text/javascript" src="javascript/libs/papaparse.js"></script>
+        <script type="text/javascript" src="javascript/libs/alasql.min.js"></script>
+
+        <script type="text/javascript" src="javascript/libs/three.min.js"></script>
+        <script type="text/javascript" src="javascript/libs/TrackballControls.js"></script>
+        <script type="text/javascript" src="javascript/libs/rainbowvis.js"></script>
+
+
+        <link rel="icon" type="image/x-icon"  href="image/favicon1.ico"/>
+        <link rel="icon" type="image/png" href="image/favicon1-16.png" />
+        <title>VisFlow</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>-->
+        <!--<link rel="stylesheet"  type="text/css" href="CSS/bootstrap.min.css">-->
+        <link rel="stylesheet" type="text/css" href="CSS/tab.css">
+        <link rel="stylesheet" type="text/css" href="CSS/init.css">
+        <link rel="stylesheet" type="text/css" href="CSS/jquery.splitter.css">
+        <link rel="stylesheet" type="text/css" href="CSS/ul.css">
+        <link rel="stylesheet" type="text/css" href="CSS/inputsearch.css">
+        <link rel="stylesheet" type="text/css" href="CSS/progressbar.css">
+        <!--<link rel="stylesheet" type="text/css" href="javascript/jquery/jquery-ui.css">-->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous" >
+        <link rel="stylesheet" type="text/css" href="javascript/vis/vis.css"  />
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+        <!--        <script type="text/javascript" src="javascript/jquery/jquery-1.12.4.js"></script>
+                <script  type="text/javascript" src="javascript/jquery/jquery-ui.min.js"></script>-->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!--<script  type="text/javascript" src="javascript/js/bootstrap.min.js"></script>-->
+
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.2/themes/default/style.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.2/jstree.min.js"></script>
+
+        <link  href="javascript/libs/viewer.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald" rel="stylesheet">
+
+        <script  type="text/javascript" src="javascript/libs/viewer.js"></script>
+        <script type="text/javascript" src="javascript/vis/exampleUtil.js"></script>
+        <script type="text/javascript" src="javascript/vis/vis.js"></script>
+        <script type="text/javascript" src="javascript/js/jquery.chained.min.js"></script>
+
+        <script src="//d3js.org/d3.v3.min.js"></script>
+        <script src="//d3js.org/topojson.v1.min.js"></script>
+
+
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+        </script>
+
+        <script type="text/javascript" language="javascript"  src="example/exampleOne.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwo.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThree.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFour.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFour.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFive.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSix.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSeven.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleEight.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleNine.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTen.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleEvelen.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwelve.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThirtheen.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFourtheen.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFiftheen.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSixtheen.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSeventheen.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleEightheen.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleNightheen.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwenty.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwentyOne.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwentyTwo.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwentyThree.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwentyFour.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwentyFive.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwentySix.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwentySeven.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwentyEight.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleTwentyNine.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThirty.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThirtyOne.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThirtyTwo.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThirtyThree.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThirtyFour.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThirtyFive.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThirtySix.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThirtySeven.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThirtyEight.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleThirtyNine.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleForty.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFortyOne.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFortyTwo.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFortyThree.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFortyFour.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFortyFive.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFortySix.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFortySeven.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFortyEight.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFortyNine.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFifty.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFiftyOne.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFiftyTwo.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFiftyThree.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFiftyFour.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFiftyFive.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFiftySix.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFiftySeven.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFiftyEight.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleFiftyNine.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSixty.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSixtyOne.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSixtyTwo.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSixtyThree.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSixtyFour.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSixtyFive.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSixtySix.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSixtySeven.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSixtyEight.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSixtyNine.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSeventy.js"></script>
+        <script type="text/javascript" language="javascript"  src="example/exampleSeventyOne.js"></script>
+        <script type="text/javascript" language="javascript"  src="sqlbuilder/sqlbuilder.js"></script>
+        <script type="text/javascript" language="javascript"  src="sqlbuilder/xquerygenerater.js"></script>
+        <!--<script type="text/javascript" language="javascript"  src="javascript/libs/jQuery.splitter.js"></script>-->
+        <!--<script type="text/javascript" language="javascript"  src="javascript/libs/masonry.pkgd.js"></script>-->
+        <!--<script type="text/javascript" language="javascript"  src="javascript/libs/masonry.pkgd.min.js"></script>-->
+        <script type="text/javascript" language="javascript"  src="javascript/js/jquery.validate.js"></script>
+        <script type="text/javascript" src="javascript/myrouter.js"></script>
+        <script type="text/javascript" src="javascript/basefunctions.js"></script>
+        <script type="text/javascript" src="javascript/factory.js"></script>
+        <script type="text/javascript" src="javascript/data.js"></script>
+        <script type="text/javascript" src="javascript/combine.js"></script>
+        <script type="text/javascript" src="javascript/connect.js"></script>
+        <script type="text/javascript" src="javascript/fusion.js"></script>
+        <script type="text/javascript" src="javascript/analytics.js"></script>
+        <script type="text/javascript" src="javascript/terminal.js"></script>
+        <script type="text/javascript" src="javascript/adapter.js"></script>
+        <script type="text/javascript" src="javascript/edge.js"></script>
+        <script type="text/javascript" src="javascript/IO.js"></script>
+        <script type="text/javascript" src="javascript/if.js"></script>
+        <script type="text/javascript" src="javascript/repeat.js"></script>
+        <script type="text/javascript" src="javascript/waiton.js"></script>
+        <script type="text/javascript" src="javascript/nodeinfoGeneration.js"></script>
+        <script type="text/javascript" src="javascript/library.js"></script>
+        <script type="text/javascript" src="javascript/printer.js"></script>
+        <script type="text/javascript" src="javascript/status.js"></script>
+        <script type="text/javascript" src="javascript/resultpage.js"></script>
+        <script type="text/javascript" src="javascript/examplePage.js"></script>
+        <script type="text/javascript" src="javascript/menu.js"></script>
+        <script type="text/javascript" src="javascript/validation.js"></script>
+        <script type="text/javascript" src="javascript/registerPage.js"></script>
+        <script type="text/javascript" src="javascript/resourcesPage.js"></script>
+        <script type="text/javascript" src="javascript/deleteFunc.js"></script>
+        <script type="text/javascript" src="javascript/procedure.js"></script>
+        <script type="text/javascript" src="javascript/testPage.js"></script>
+
+
+        <script type="text/javascript" src="javascript/cubeView.js"></script>
+        <script type="text/javascript" src="javascript/init.js"></script>
+        <script type="text/javascript">
+                   var _paq = _paq || [];
+                   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+                   _paq.push(['trackPageView']);
+                   _paq.push(['enableLinkTracking']);
+                   (function () {
+                       var u = "//dblab2.innocraft.cloud/";
+                       _paq.push(['setTrackerUrl', u + 'piwik.php']);
+                       _paq.push(['setSiteId', '1']);
+                       var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+                       g.type = 'text/javascript';
+                       g.async = true;
+                       g.defer = true;
+                       g.src = u + 'piwik.js';
+                       s.parentNode.insertBefore(g, s);
+                   })();
+        </script>
+        <!-- End Matomo Code -->
+    </head>  
+
+    <!--<body class="body" onload="draw();" style="">-->
+    <body class="body" onload="draw();" style=" overflow: hidden;">
+        <!--<body class="body" onload="draw();" >-->
+        <div id="signdiv" style="position:absolute;right:10px;top:5px;">
+            <button id="signInbutton" class="signinbutton" style="" onclick="signIn()"><i class="fas fa-sign-in-alt"></i> Sign In </button>
+            <div id="signInfo" style="display: none; color:white">
+                <label>Login As:</label>
+                <label id="signUserNameLabel"></label>
+                <button class="signinbutton" style="" onclick="signOut()">Sign Out</button>
+            </div>
+        </div>
+        <ul class="nav nav-pills navbar-dark pills-mediumblue"> 
+            <!--<li class="nav-item">-->
+            <li class="navbar-item" role="presentation">
+                <!--<label class="navbar-brand" style=" font-size:34px;color:#927346;margin: 0;">VisFlow</label>-->
+                <label class="navbar-brand" style="font-size:4vh;height: 3vh;color:#fff;margin: 0;padding: 1vh;position:relative;left: 0vh;top: 0.1vh;">VisFlow</label>
+                <!--<label class="navbar-brand"  style="color:#fff;">VisFlow</label>-->
+            </li>
+            <li  class="navbar-item" role="presentation" style="display: none;" id="visflowAdminPage"><a class="nav-link" style="color:whitesmoke;" href="AdminPage.html" target="_blank"><i class="fas fa-cogs"></i>Admin</a></li>
+            <li  class="navbar-item" role="presentation"><a class="nav-link" style="color:whitesmoke;" onclick="menuLoadExample()" id="menuLabel"><i class="fas fa-cubes"></i>Examples</a></li>
+            <!--            <li class="navbar-item" role="presentation"><a  class="nav-link" style="color:whitesmoke;" onclick="help()">Help</a></li>
+                        <li class="navbar-item" role="presentation"><a  class="nav-link" style="color:whitesmoke;" onclick="about()">About</a></li>-->
+            <li class="navbar-item" role="presentation"><a  class="nav-link" style="color:whitesmoke;" href="HelpPage.html" target="_blank"><i class="fab fa-hire-a-helper"></i>Help</a></li>
+            <li class="navbar-item" role="presentation"><a  class="nav-link" style="color:whitesmoke;" href="HelpPage.html" target="_blank"><i class="fas fa-question-circle"></i>About</a></li>
+        </ul>
+        <!--<div class="container">-->
+        <!--<div id="nonExmaplePage" style="height:100%;width: 100%;">-->
+        <div id="nonExmaplePage" style="height:100%;width: 100%;">
+            <ul class="nav nav-pills" id="myTabs" style='margin:0.1vh;padding:0;'>
+                <li  class="active"><a data-toggle="tab" href="#home" style="font-size:1.7vh;font-weight:bold;"><i class="fas fa-edit"></i>Query</a></li>
+                <li class="disabled"><a  href="#menu1" style="font-size:1.7vh;font-weight:bold;"><i class="fas fa-american-sign-language-interpreting"></i>Results</a></li>
+                <li ><a data-toggle="tab" href="#menu2" style="font-size:1.7vh;font-weight:bold;"><i class="fas fa-file-archive"></i>Register</a></li>
+                <li ><a data-toggle="tab" href="#menu3" style="font-size:1.7vh;font-weight:bold;"><i class="fas fa-archive"></i>Resources</a></li> 
+                <!--<li ><a data-toggle="tab" href="#menu4" style="font-size:1.7vh;font-weight:bold">Test Page</a></li>--> 
+                <!--<li ><a data-toggle="tab" href="#menu4"><label>Examples</label></a></li>-->
+            </ul>
+            <div class="tab-content">
+                <!--<div id="home" class="tab-pane fade nav-tabs  in active ">-->
+                <div id="home" class="tab-pane fade nav-tabs   in active">
+                    <div class="alert alert-danger fade in hideit" style="position:absolute;z-index: 10;width: 100vh;left:50vh;" id="alertdiv">
+                        <label id="errorMessage">Loop detected</label>
+                        <!--<button class="btn pull-right" onclick="hideAlert()"><span class="glyphicon glyphicon-remove"></span></button>-->
+                        <span class="glyphicon glyphicon-remove pull-right" onclick="hideAlert()"></span>
+                    </div>
+
+                    <div class="position:relative; margin-left:1.1vh;">
+                        <!--<button type="button" class="btn btn-purple" onclick="run()">Run</button>-->
+                        <button type="button" class="btn btn-purple" onclick="run()"><span  data-toggle="tooltip" data-placement="top" title="Run" class="glyphicon glyphicon-play"></span></button>
+                        <!--<button type="button" class="btn btn-purple" onclick="clearNetwork()">Clear</button>-->
+                        <button type="button" class="btn btn-purple" onclick="clearNetwork()"><span   data-toggle="tooltip" data-placement="top" title="Clean" class="glyphicon glyphicon-erase"></span></button>
+                        <!--<button type="button" class="btn btn-purple" data-toggle="modal" data-target="#openFile" id="showModal">Import Workflow</button>-->
+                        <button type="button" class="btn btn-purple" data-toggle="modal" data-target="#openFile" id="showModal"><span  data-toggle="tooltip" data-placement="top" title="Import" class="glyphicon glyphicon-floppy-save"></span></button>
+                        <!--<button type="button" class="btn btn-purple" data-toggle="modal" data-target="#myModal" id="showModal">Export Workflow</button>-->
+                        <button type="button" class="btn btn-purple" data-toggle="modal" data-target="#myModal" id="showModal" >
+                            <span  data-toggle="tooltip" data-placement="top" title="Export" class="glyphicon glyphicon-floppy-open"></span></button>        
+                        <button class='pull-right btn btn-warning' style='margin-right:5vh;display:none;' id='procedureBackButton' onclick='procedureBackButton()'>Back</button>
+                        <div style="float:right;width:2.5%;border:1px #EFF0F1 solid;"></div>
+                        <span id="loadedHTMLworkflowname" style="font-family: 'Oswald', sans-serif;float:right;"></span>
+                    </div>
+
+
+                    <div style='position: relative;height:100%;'> 
+                        <ul class="buttonslist">
+                            <li>
+                                <!--<ul class="list-group listresource" style="position:absolute;left:1%;top:14%;">-->
+                                <ul class="list-group listresource">
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default" id="adddata" >
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Data" type="image" id="adddatainput" src="image/data btn.png" />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default"  id="addcombine" >
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Combine"  type="image" id="addcombineinput" src="image/combine btn.png"  />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default"  id="addfusion">
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Fusion"   type="image" id="addfusioninput" src="image/fusion btn.png"  />
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li><li>
+                                <!--<ul class="list-group listtransformer" style="position:absolute;left:1%;top:30%;">-->
+                                <ul class="list-group listtransformer" >
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default"  id="addadapter" >
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Adapter"  type="image" id="addadapterinput" src="image/adapter btn.png"   />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default"  id="addanalytics" >
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Analytics"  type="image" id="addanalyticsinput" src="image/analytics btn.png" />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default"  id="addlibrary">
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Library"  type="image" id="addlibraryinput" src="image/library btn.png" />
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li><li>
+                                <ul class="list-group listinteraction">
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default"  id="addterminal" >
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Terminal"  type="image" id="addterminalinput" src="image/terminal btn.png"  />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default"  id="addprinter">
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Printer"  type="image" id="addprinterinput" src="image/printer btn.png"  />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default"  id="addio" >
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="IO"  type="image" id="addioinput" src="image/IO btn.png"  />
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li><li>
+                                <ul class="list-group listworkflow" >
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default" id="addif">
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="If"  type="image" id="addifinput" src="image/if btn.png"  />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default" id="addrepeat"> 
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Repeat"  type="image" id="addrepeatinput" src="image/repeat btn.png"  />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default" id="addconnect">
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Connect" type="image" id="addconnectinput" src="image/connect btn.png"    />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default" id="addwaiton" >
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Wait on"   type="image" id="addwaitoninput" src="image/waiton btn.png"  />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default" id="addprocedure" >
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Procedure" type="image" id="addprocedureinput" src="image/nested btn.png"  />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default"  id="addarrow">
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Edge"  type="image" id="addarrowinput" src="image/arrow btn.png"   />
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li><li>
+                                <ul class="list-group listrest">
+                                    <li class="list-group-item">
+                                        <!--<button class="btn btn-default" style="width: 5vh;padding:0;" id="addselect" onclick="selectedItem()">-->
+                                        <button class="btn btn-default"  id="addselect">
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Select" type="image" id="addselectinput" src="image/select btn.png"    />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <!--<button class="btn btn-default" style="width: 5vh;padding:0;" id="adddelete" onclick="deleteSelected()">-->
+                                        <button class="btn btn-default"  id="adddelete" >
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="Delete" type="image" id="adddeleteinput" src="image/delete btn.png"   />
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <button class="btn btn-default" id="addundelete" onclick="undeleteSelected()">
+                                            <!--<button class="btn btn-default" style="width: 5vh;padding:0;" id="addundelete" >-->
+                                            <input class="pull-left liinputstyle" data-toggle="tooltip" data-placement="right" title="UnDel" type="image" id="addundeleteinput" src="image/undelete btn.png"   />
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div id='containerfornetwork' style="position:absolute;left:7vh;margin-top: 0.2vh; margin-right: 0; height:85%; width:94%;">
+                            <div id="mynetworkwrapper" style="position: absolute;width:80%;height:100%;">
+                                <div id="mynetwork" style="position: absolute;width:100%;height:100%;"></div>
+                            </div>
+
+                            <div id="nodeinfobuttonshow" class="outputwindow" style="position:absolute;left:80%;width:20%;height:100%;background-color:white;overflow: auto;padding:0.2vh;border-left: 0 none;">
+                                <ul id='nodeinfopanel' class="nav nav-pills" >
+                                    <li class="active"><a data-toggle="tab" href="#nodeinfo" id="infoTab1" style="font-size:1.5vh;font-weight:bold">Node Info</a></li>
+                                    <li><a data-toggle="tab" href="#nodeupdate" style="font-size:1.5vh;font-weight:bold">Update</a></li>
+                                </ul>
+                                <div class="tab-content" style="height:85%;margin: 0.1vh;">
+                                    <div id="nodeinfo" class="tab-pane fade in active nav-tabs">
+                                        <div id="selectedinfo"></div>
+                                    </div>
+                                    <div id="nodeupdate" class="tab-pane fade in nav-tabs">
+                                        <div id="updatediv"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<iframe id="myD3Visual1" src="./cubeView.html" style="position: absolute;z-index: 9999;width:800px;height: 600px;"></iframe>-->
+                    </div>        
+
+                    <button class="btn btn-mediumblue vertical-btn pull-right" style="position: absolute;top:10vh;left:94%;height:3%;width:6%;font-size:1vw;padding: 0;" onclick="nodeinfoclick()">
+                        <!--<button class="btn btn-info vertical-btn" style="position: relative;float:left;font-size:1vw;padding: 0.3vh;" onclick="nodeinfoclick()">-->
+                        Info Panel
+                    </button>
+                </div>
+
+                <div id="menu1" class="tab-pane fade nav-tabs ">
+                    <div id="resultPage" style="position: relative;width:100%;height:100%;"></div>
+                </div>    
+                <div id="menu2" class="tab-pane fade nav-tabs  " style="overflow-y: auto">
+                    <div id="registerPage" style="position: relative;width:100%;height:100%;"></div>
+
+                </div>
+                <div id="menu3" class="tab-pane fade nav-tabs   ">
+                    <div id="resourcesPage" style="position: relative;width:99%;height:98%;"></div>
+                </div>
+                <div id="menu4" class="tab-pane fade nav-tabs   ">
+                    <div id="testPage" style="position: relative;width:99%;height:98%;"></div>
+                </div>
+            </div>
+        </div>        
+        <!--<div id="examplePage" class="hideit" style="overflow: auto;"></div>-->
+        <div id="examplePage" class="hideit"></div>
+
+
+
+        <div class="modal fade" id="about" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                        <h4 class="modal-title">About</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                This application is designed by Database Lab in University of Idaho.
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    Student: Xin Mou <br> Email: mou1609@vandals.uidaho.edu
+                                </div>
+                                <div class="col-sm-3">
+                                    Professor: Hasan Jamil <br> Email: jamil@uidaho.edu
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p>If you have any question, please contact 
+                                    <a href="mailto:mou1609@vandals.uidaho.edu">Xin Mou</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Save File</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label>File Name:</label><input class="form-control" id="saveFileName">
+                        <div>
+                            workflow type:
+                            <input type="radio" name="wftype" checked value="workflow"> workflow
+                            <input type="radio" name="wftype"  value="module"> module
+                        </div>
+                        <div id="modalworkflowselectstartandend" style="display: none;">
+                            <div style="display: none;">
+                                <label>Start node</label><select class="form-control" id="modalStartNode"></select>
+                                <!--<label>start node</label><input class="form-control">-->
+                                <label>End node</label><select class="form-control" id="modalEndNode"></select>
+                            </div>
+                            <label>Description</label><textarea id="modalDescription" class="form-control" style="resize: vertical;"></textarea>
+                            <!--<label>end node</label><input class="form-control">-->
+                        </div>
+                        <input id='modalData' style='display: none;'>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" onclick="download()">Save</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="openFile" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Open File</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="file" id="uploadFiles" name="files[]" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" onclick="loadExampleFromFile()">Open</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="generalIOUploadFile" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <input id="generalUploadFilesID" style="display: none;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="generalUploadFilesNeeded"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="file" id="generalUploadFiles" name="file" multiple/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" onclick="generalIOUploadFile()">Upload</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="signInPage" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Sign in</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>email:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="signUserName">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>password:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="password" id="signPassword" >
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <span style='position:absolute;left:10px;'>Don't have an account? <a onclick='openAccountRegisterPage()'>Register</a></span>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" onclick="signInButton()">OK</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="accountRegisterPage" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Register</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>email:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="newUserName" autocomplete='off'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>organization:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="newOrg" autocomplete='off'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>First Name:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="newFirstName" autocomplete='off'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>Last Name:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="newLastName" autocomplete='off'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>Designation:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="newDesignation" autocomplete='off'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>password:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="password" id="newPassword" autocomplete='off'>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>repeat password:</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="password" id="newPassword1" autocomplete='off'>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <span style='position:absolute;left:10px;'>have an account? <a onclick='openAccountRegisterPage()'>Sign in</a></span>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" onclick="registerButton()">Submit</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="help" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Help page</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class='row'>
+                            <div class='col-md-2'>
+                                paper 1:
+                            </div>
+                            <div class='col-md-10'>
+                                <a href='http://ieeexplore.ieee.org/document/7930101/'>
+                                    Visflow: A visual database integration and workflow querying system
+                                </a>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-2'>
+                                paper 2:
+                            </div>
+                            <div class='col-md-10'>
+                                <a href='http://ieeexplore.ieee.org/document/7822615/'>
+                                    Visual orchestration and autonomous execution of distributed and heterogeneous computational biology pipelines
+                                </a>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-2'>
+                                paper 3:
+                            </div>
+                            <div class='col-md-10'>
+                                <a href='https://www.inderscienceonline.com/doi/abs/10.1504/IJDMB.2017.084262'>
+                                    Implementing computational biology pipelines using visflow
+                                </a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class='row'>
+                            <div class='col-md-4'>
+                                VisFlow Manual
+                            </div>
+                            <div class='col-md-8'>
+                                <a  class="nav-link" style="" href="manual/Manual.pdf" target="_blank">Manual</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

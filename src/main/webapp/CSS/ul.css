@@ -1,0 +1,116 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 12, 2016, 4:30:28 PM
+    Author     : jupiter
+*/
+
+#myTabs {
+        position: relative;
+        left:1vh;
+}
+#myTabs li {
+        min-width: 2px;
+        width:auto !important;
+        width: 5%;
+        text-align: center;
+        font-size: 1.5vh;
+}
+#myTabs li>a {
+        height: 4vh;
+}
+#resourcesTab li, #nodeinfopanel li {
+        min-width: 5px;
+        width:auto !important;
+        width: 30%;
+        text-align: center;
+        font-size: 1.5vh;
+        white-space: nowrap;
+}
+#resourcesTab li>a, #nodeinfopanel li>a {
+        height: 4vh;
+}
+
+
+
+ul.buttonslist {
+        position:absolute;
+        padding: 0;
+        margin:0
+}
+
+/*ul.buttonslist {
+        position: relative;
+        float:left;
+        padding: 0;
+        margin:0
+}*/
+
+ul.buttonslist li ul {
+        display: inline-block;
+}
+
+ul.buttonslist li {
+        list-style-type: none;
+        border-top: 0 none;
+        border-bottom: 0 none;
+        border-left: 0 none;
+        border-right:0 none;
+        padding: 0px;
+}
+
+ul.list-group {
+        margin: 0.2vh;
+        margin-left: 0;
+        padding: 0
+}
+
+#buttonslist .list-group li.list-group-item {
+  border-top: 0 none;
+  border-bottom: 0 none;
+  border-left: 0 none;
+  border-right:0 none;
+  padding: 0px;
+  margin: 0.1vh
+}
+
+.listresource {
+    border: .5vh solid;
+    border-color: #03512A;
+    padding:.1vh;
+}
+ 
+.listtransformer {
+    border: .5vh solid;
+    border-color: #FF7870;
+    padding:.1vh;
+}
+
+.listinteraction {
+    border: .5vh solid;
+    border-color: #008B8B;
+    padding:.1vh;
+}
+
+.listworkflow {
+    border: .5vh solid;
+    border-color: #793714;
+    padding:.1vh;
+}
+
+.listrest {
+    border: .5vh solid;
+    border-color: #008080;
+    padding:.1vh;
+}
+
+
+.liinputstyle {
+    width:2.8vh; 
+    /*height: 2.8vh;*/
+    height: 2.6vh;
+    margin:0.8vh;
+}
